@@ -1,0 +1,16 @@
+Meraki Port 0 payload:  {"enabled": false,"linkNegotiation" : "1 Gigabit full duplex (forced)"}
+Meraki Port 1 payload:  {"poeEnabled" : false,"vlan" : 1}
+Meraki Port 2 payload:  {"vlan" : 1,"vlan" : 11,'voiceVlan' : 20}
+Meraki Port 3 payload:  {"linkNegotiation" : "100 Megabit half duplex (forced)"}
+Meraki Port 4 payload:  {"vlan" : 1,"vlan" : 72,"linkNegotiation" : "10 Megabit full duplex (forced)"}
+Meraki Port 14 payload:  {"linkNegotiation" : "10 Megabit (auto)","stpGuard": "bpdu guard","stpGuard": "root guard"}
+Meraki Port 15 payload:  {"linkNegotiation" : "100 Megabit (auto)","stpGuard": "loop guard"}
+Meraki Port 16 payload:  {"linkNegotiation" : "1 Gigabit full duplex (forced)","stpGuard": "bpdu guard","stpGuard": "root guard"}
+Meraki Port 17 payload:  {"linkNegotiation" : "10 Megabit full duplex (forced)","stpGuard": "bpdu guard","stpGuard": "root guard"}
+Meraki Port 18 payload:  {"linkNegotiation" : "10 Megabit half duplex (forced)"}
+Meraki Port 19 payload:  {"linkNegotiation" : "100 Megabit full duplex (forced)"}
+Meraki Port 20 payload:  {"linkNegotiation" : "100 Megabit full duplex (forced)"}
+Meraki Port 21 payload:  {"linkNegotiation" : "1 Gigabit full duplex (forced)"}
+Meraki Port 44 payload:  {"linkNegotiation" : "100 Megabit (auto)","stpGuard": "bpdu guard"}
+Meraki Port 45 payload:  {"name":"My switch port","vlan" : 10,"stpGuard": "bpdu guard"}
+Meraki Port 47 payload:  {"enabled": false}
