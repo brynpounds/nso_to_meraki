@@ -440,12 +440,20 @@ for index, port in enumerate(ports):
         meraki_ports[index] += '''"enabled": false,'''
     if "power" in port:
         meraki_ports[index] += '''"poeEnabled" : false,'''
-    if """'mode': {'access': {}""" in str(port):
-        meraki_ports[index] += '''"vlan" : 1,'''
-    if """'access': {'vlan':""" in str(port):
-        meraki_ports[index] += '''"vlan" : ''' + str(port['switchport']['access']['vlan']) + ''','''
-    if """'voice': {'vlan': """ in str(port):
-        meraki_ports[index] += """'voiceVlan' : """ + str(port['switchport']['voice']['vlan']) + ''','''
+    if "switchport" in port:
+        #print(index, port['switchport'])
+        #if "access"in port['switchport'] and not "mode" in port['switchport']:
+            #print("vlan is " + str(port['switchport']['access']['vlan']))
+        if "mode" in port['switchport']:
+            meraki_ports[index] += '''"type": "''' + str(port['switchport']['mode'])[2:-6] + '''",'''
+            try:
+                meraki_ports[index] += '''"vlan": ''' + str(port['switchport']['access']['vlan']) + ''','''
+            except:
+                meraki_ports[index] += '''"vlan": 1,'''
+            try:
+                meraki_ports[index] += '''"voiceVlan": ''' + str(port['switchport']['voice']['vlan']) + ''','''
+            except:
+                pass
     if "speed" in port:
         if port['speed'] == "1000":
             meraki_ports[index] += '''"linkNegotiation" : "1 Gigabit full duplex (forced)",'''
@@ -462,6 +470,7 @@ for index, port in enumerate(ports):
                 meraki_ports[index] += '''"stpGuard": "root guard",'''
             if port['spanning-tree']['guard'] == "loop":
                 meraki_ports[index] += '''"stpGuard": "loop guard",'''
+
                     
                     
 for index, port in enumerate(meraki_ports):
